@@ -1,7 +1,6 @@
 # Programacion\_III\_Queue-de-canciones
 
 
-
 # Queue Music Simulator (FIFO)
 
 Proyecto académico que simula un sistema tipo Spotify utilizando una estructura de datos \*\*Cola (FIFO)\*\* implementada completamente desde cero en Java, guiado por el código fuente compartido en clase.
@@ -14,7 +13,7 @@ Curso: Programación III
 
 Semestre: 5to
 
-#Explicación del diseño
+# Explicación del diseño
 
 El proyecto está dividido en dos módulos Maven:
 
