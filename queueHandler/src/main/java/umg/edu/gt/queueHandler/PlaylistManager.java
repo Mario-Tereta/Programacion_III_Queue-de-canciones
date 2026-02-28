@@ -47,6 +47,7 @@ public class PlaylistManager {
         }
 
         System.out.println("[LOG] Playlist finished.");
+        showHistory();
         System.out.println("[LOG] Total songs played: " + totalSongsPlayed);
         System.out.println("[LOG] Total time played: " + totalTimePlayed + " seconds");
     }
@@ -73,5 +74,32 @@ public class PlaylistManager {
 
         totalSongsPlayed++;
         totalTimePlayed += song.getDuration();
+    }
+    public void showHistory() {
+
+        if (history.isEmpty()) {
+            System.out.println("[LOG] No songs were played.");
+            return;
+        }
+
+        System.out.println("\n[LOG] Playback History:");
+
+        QueueLinked<Song> temp = new QueueLinked<>();
+
+        while (!history.isEmpty()) {
+
+            Song song = history.dequeue();
+
+            System.out.println("- " + song.getTitle()
+                    + " by " + song.getArtist()
+                    + " (" + song.getDuration() + "s)");
+
+            temp.enqueue(song);
+        }
+
+        // Restaura el historial
+        while (!temp.isEmpty()) {
+            history.enqueue(temp.dequeue());
+        }
     }
 }
